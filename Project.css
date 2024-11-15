@@ -1,0 +1,77 @@
+.nav1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Montserrat", sans-serif;
+}
+.ul1{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+
+}
+.ul2{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+ .div1{
+    background-image: url(old-youth-ati-suuTe0I-unsplash.jpg);
+/* height: 500px; */
+background-size: cover;
+font-family: "Roboto", serif;
+box-sizing: border-box;
+
+    
+} 
+.a1{
+    padding: 100px;
+    
+}
+.a2{
+    margin-top: -100px;
+}
+.a3{
+    margin-top: -100px;
+    color: white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    border-right: none;
+    border-left: none;
+    padding: 6px 19px;
+}
+.a5{
+    margin-top: -25px;
+}
+.div2{
+    font-family: "Roboto", serif;
+}
+.b1{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+.sec1{
+    display: flex;
+    font-family: "Roboto", serif;
+    justify-content: space-between;   
+    list-style: none; 
+}
+.secdiv1{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(s1.jpg);
+
+}
+.secdiv2{
+    list-style: none;
+    display: flex;
+    background-image: url(s2.jpg);
+}
+.secdiv3{
+    list-style: none;
+    display: flex;
+    background-image: url(s3.jpg);
+}
