@@ -66,26 +66,23 @@ box-sizing: border-box;
 }
 .sec4{
     display: grid;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(2,auto);
 }
-.d1{
-    background-image: url(p1.jpg);
+.sec5ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
 }
-.d2{
-    background-image: url(p2.jpg);
+.sec5l1{
+    text-decoration: underline;
 }
-.d3{
-    background-image: url(p3.jpg);
-}
-.d4{
-    background-image: url(p4.jpg);
-}
-.d5{
-    background-image: url(p5.jpg);
-}
-.d6{
-    background-image: url(p6.jpg);
+.sec6{
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: repeat(3,auto);
+    font-family: "Roboto", serif;
+
 }
