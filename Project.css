@@ -86,3 +86,23 @@ box-sizing: border-box;
     font-family: "Roboto", serif;
 
 }
+.sec7a1{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+.sec8{
+    border: 5px solid orangered;
+}
+.sec8a1{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border: 2px solid orangered;
+    text-align: center;
+}
+.sec8a2{
+    background-color: orangered;
+    color: white;
+    border: none;
+}
