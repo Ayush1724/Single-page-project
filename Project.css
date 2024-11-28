@@ -90,19 +90,96 @@ box-sizing: border-box;
     display: flex;
     list-style: none;
     justify-content: space-evenly;
+    align-items: center;
 }
 .sec8{
     border: 5px solid orangered;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 .sec8a1{
+    border: 2px solid orangered;
     border-top: none;
     border-left: none;
     border-right: none;
-    border: 2px solid orangered;
+
     text-align: center;
 }
 .sec8a2{
     background-color: orangered;
     color: white;
     border: none;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.sec10{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.sec10a1{
+    padding-top: 20px;
+
+}
+.sec10a2{
+    display: flex;
+    gap: 10px;
+}
+
+#check{
+    display: none;
+}
+.nav1 label{
+    display: none;
+}
+#check:checked~.nav1 .ul1{
+    display: block;
+}
+@media screen and (max-width: 600px) {
+    .nav1 label{
+        display: block;
+    }
+    .ul1{
+        display: none;
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        background-color: rgba(255, 166, 0, 0.89);
+        
+    }
+    .ul1 li{
+        padding: 15px;
+        margin-left: -20px;
+    }
+.sec2{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.sec6{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+}
+.sec7a1{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+}
+.sec10{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+}
+.div1{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+}
+.div2{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+}
 }
