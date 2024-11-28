@@ -17,7 +17,7 @@
     gap: 10px;
 }
  .div1{
-    background-image: url(old-youth-ati-suuTe0I-unsplash.jpg);
+    background-image: url(tamara-bellis-d7CK4t8Lz6s-unsplash.jpg);
 /* height: 500px; */
 background-size: cover;
 font-family: "Roboto", serif;
@@ -70,11 +70,13 @@ box-sizing: border-box;
     padding-right: 50px;
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(2,auto);
+    font-family: "Montserrat", sans-serif;
 }
 .sec5ul{
     list-style: none;
     display: flex;
     justify-content: space-around;
+    font-family: "Montserrat", sans-serif;
 }
 .sec5l1{
     text-decoration: underline;
@@ -87,12 +89,15 @@ box-sizing: border-box;
 
 }
 .sec7a1{
+
+    font-family: "Montserrat", sans-serif;
     display: flex;
     list-style: none;
     justify-content: space-evenly;
     align-items: center;
 }
 .sec8{
+    font-family: "Montserrat", sans-serif;
     border: 5px solid orangered;
     margin-left: 80px;
     margin-right: 80px;
@@ -114,6 +119,7 @@ box-sizing: border-box;
     padding-right: 20px;
 }
 .sec10{
+    font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: space-between;
     
@@ -168,7 +174,7 @@ box-sizing: border-box;
     justify-content: center
 }
 .sec10{
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center
 }
@@ -182,4 +188,57 @@ box-sizing: border-box;
     align-items: center;
     justify-content: center
 }
+}
+.sec11{
+    font-family: "Roboto", serif;
+}
+
+.sec12{
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: repeat(4,auto);
+    font-family: "Roboto", serif;
+
+}
+.sec13{
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: repeat(4,auto);
+    font-family: "Roboto", serif;
+
+}
+.sec14{
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: repeat(4,auto);
+    font-family: "Roboto", serif;
+
+}
+.sec15{
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: repeat(4,auto);
+    font-family: "Roboto", serif;
+
+}
+.sec16{
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: repeat(4,auto);
+    font-family: "Roboto", serif;
+
+}
+.sec17{
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: repeat(4,auto);
+    font-family: "Roboto", serif;
+
+}
+.sec18{
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: repeat(4,auto);
+    font-family: "Roboto", serif;
+
 }

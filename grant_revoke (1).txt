@@ -1,0 +1,176 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select user,'Localhost' from mysql.user;
++------------------+-----------+
+| user             | Localhost |
++------------------+-----------+
+| akku             | Localhost |
+| ajysir           | Localhost |
+| mysql.infoschema | Localhost |
+| mysql.session    | Localhost |
+| mysql.sys        | Localhost |
+| myuser           | Localhost |
+| root             | Localhost |
+| test             | Localhost |
+| test1            | Localhost |
++------------------+-----------+
+9 rows in set (0.00 sec)
+
+mysql> grant all privileges *.* on 'myuser'@'localhost';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*.* on 'myuser'@'localhost'' at line 1
+mysql> grant all privileges to *.* on 'myuser'@'localhost';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to *.* on 'myuser'@'localhost'' at line 1
+mysql> grant all privileges on *.* to 'myuser'@'localhost';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create user 'uruser'@'localhost' identified '12345';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''12345'' at line 1
+mysql> create user 'uruser'@'localhost' identified by '12345';
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select user,'Localhost' from mysql.user;
++------------------+-----------+
+| user             | Localhost |
++------------------+-----------+
+| akku             | Localhost |
+| ajysir           | Localhost |
+| mysql.infoschema | Localhost |
+| mysql.session    | Localhost |
+| mysql.sys        | Localhost |
+| myuser           | Localhost |
+| root             | Localhost |
+| test             | Localhost |
+| test1            | Localhost |
+| uruser           | Localhost |
++------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> grant all privileges to mydb.* on 'uruser'@'localhost';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to mydb.* on 'uruser'@'localhost'' at line 1
+mysql> grant all privileges on mydb.* to 'uruser'@'localhost';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create user 'iuser'@'localhost' identified '123456';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''123456'' at line 1
+mysql> create user 'iuser'@'localhost' identified by '123456';
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select user,'Localhost' from mysql.user;
++------------------+-----------+
+| user             | Localhost |
++------------------+-----------+
+| akku             | Localhost |
+| ajysir           | Localhost |
+| iuser            | Localhost |
+| mysql.infoschema | Localhost |
+| mysql.session    | Localhost |
+| mysql.sys        | Localhost |
+| myuser           | Localhost |
+| root             | Localhost |
+| test             | Localhost |
+| test1            | Localhost |
+| uruser           | Localhost |
++------------------+-----------+
+11 rows in set (0.00 sec)
+
+mysql> grant select privileges on mydb.* to 'iuser'@'localhost';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'privileges on mydb.* to 'iuser'@'localhost'' at line 1
+mysql> grant select, privileges on mydb.* to 'iuser'@'localhost';
+ERROR 3619 (HY000): Illegal privilege level specified for PRIVILEGES
+mysql> grant select privilege on mydb.* to 'iuser'@'localhost';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'privilege on mydb.* to 'iuser'@'localhost'' at line 1
+mysql> grant select  on mydb.* to 'iuser'@'localhost';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> grant delete  on mydb.* to 'iuser'@'localhost';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> flush privileges;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> use mydb;
+Database changed
+mysql> select * from emp;
++----+----------+------------+-------------------+----------+-----------+-----------+--------+------------+------+------------+
+| sn | fname    | lname      | area              | city     | dept      | salary    | active | mobile     | age  | dob        |
++----+----------+------------+-------------------+----------+-----------+-----------+--------+------------+------+------------+
+|  1 | Amit     | Sharma     | Arera Colony      | Bhopal   | IT        |  75000.00 |      1 | 9876543210 |   28 | 1996-05-14 |
+|  2 | Priya    | Verma      | somewhere in agra | Agra     | HR        |  64500.00 |      0 | 9876543211 |   26 | 1998-03-22 |
+|  3 | Rajesh   | Gupta      | TT Nagar          | Bhopal   | Finance   |  85000.00 |      1 | 9876543212 |   32 | 1992-12-01 |
+|  4 | Sneha    | Patel      | Shahpura          | Bhopal   | Marketing |  70000.00 |      1 | 9876543213 |   30 | 1994-07-10 |
+|  5 | Anil     | Kumar      | Kolar Road        | Bhopal   | Sales     |  60000.00 |      1 | 9876543214 |   35 | 1989-11-08 |
+|  6 | Neha     | Sinha      | Habibganj         | Bhopal   | IT        |  80000.00 |      1 | 9876543215 |   27 | 1997-06-15 |
+|  7 | Vikram   | Singh      | Hoshangabad Road  | Bhopal   | HR        |  54000.00 |      0 | 9876543216 |   29 | 1995-08-20 |
+|  8 | Rohit    | Mehta      | Govindpura        | Bhopal   | Marketing |  75000.00 |      1 | 9876543217 |   33 | 1991-04-05 |
+|  9 | Kavita   | Joshi      | Bawadiya Kalan    | Bhopal   | IT        |  90000.00 |      1 | 9876543218 |   31 | 1993-09-18 |
+| 10 | Suresh   | Reddy      | Chunabhatti       | Bhopal   | Finance   |  78000.00 |      1 | 9876543219 |   34 | 1990-02-25 |
+| 11 | Manish   | Desai      | somewhere in agra | Agra     | HR        |  61000.00 |      0 | 9876543220 |   27 | 1997-01-11 |
+| 12 | Deepika  | Chauhan    | Ashoka Garden     | Bhopal   | Marketing |  69000.00 |      1 | 9876543221 |   25 | 1999-03-30 |
+| 13 | Sunil    | Nair       | Berasia Road      | Bhopal   | Sales     |  85450.00 |      1 | 9876543222 |   36 | 1988-07-17 |
+| 14 | Pooja    | Iyer       | Idgah Hills       | Bhopal   | Finance   |  92000.00 |      1 | 9876543223 |   29 | 1995-12-19 |
+| 15 | Arjun    | Pandey     | Karond            | Bhopal   | IT        |  77000.00 |      1 | 9876543224 |   28 | 1996-05-21 |
+| 16 | Monalisa | Das        | Katara Hills      | Bhopal   | Sales     |  54000.00 |      1 | 9876543225 |   24 | 2000-09-25 |
+| 17 | Rahul    | Chatterjee | Chhola Road       | Bhopal   | Marketing |  80000.00 |      1 | 9876543226 |   30 | 1994-10-07 |
+| 18 | Anita    | Kohli      | Jawahar Chowk     | Bhopal   | HR        |  70000.00 |      0 | 9876543227 |   26 | 1998-02-13 |
+| 19 | Naveen   | Rao        | Misrod            | Bhopal   | Finance   |  86000.00 |      1 | 9876543228 |   33 | 1991-11-09 |
+| 20 | Divya    | Shukla     | Patel Nagar       | Bhopal   | IT        |  94000.00 |      1 | 9876543229 |   28 | 1996-04-03 |
+| 21 | Aakash   | Singh      | Vijay Nagar       | Indore   | IT        |  78000.00 |      1 | 9876543230 |   27 | 1997-08-11 |
+| 22 | Riya     | Mehra      | somewhere in agra | Agra     | HR        |  63500.00 |      0 | 9876543231 |   26 | 1998-09-14 |
+| 23 | Manoj    | Patil      | Bhawarkua         | Indore   | Finance   |  86000.00 |      1 | 9876543232 |   31 | 1993-06-19 |
+| 24 | Snehal   | Jain       | AB Road           | Indore   | Marketing |  72000.00 |      1 | 9876543233 |   29 | 1995-03-11 |
+| 25 | Ajay     | Wadekar    | Awadhpuri         | Bhopal   | Education |  85000.00 |      1 | 9876543234 |   30 | 1990-11-03 |
+| 26 | Neetu    | Sharma     | Nipania           | Indore   | IT        |  80000.00 |      1 | 9876543235 |   28 | 1996-05-07 |
+| 27 | Vimal    | Kothari    | somewhere in agra | Agra     | HR        |  59000.00 |      0 | 9876543236 |   32 | 1992-07-18 |
+| 28 | Rahul    | Verma      | LIG Colony        | Indore   | Finance   |  87000.00 |      1 | 9876543237 |   33 | 1991-12-27 |
+| 29 | Kavita   | Deshmukh   | Scheme 54         | Indore   | Marketing |  75000.00 |      1 | 9876543238 |   30 | 1994-02-10 |
+| 30 | Vikram   | Malik      | Khajrana          | Indore   | Sales     |  68000.00 |      1 | 9876543239 |   28 | 1996-10-22 |
+| 31 | Anjali   | Kapoor     | Karol Bagh        | Delhi    | IT        |  81000.00 |      1 | 9876543240 |   29 | 1995-09-12 |
+| 32 | Rohit    | Singhania  | Amirpet           | Hydrabad | HR        |  66500.00 |      0 | 9876543241 |   27 | 1997-11-23 |
+| 33 | Puja     | Agarwal    | Lajpat Nagar      | Delhi    | Finance   |  85000.00 |      1 | 9876543242 |   32 | 1992-05-30 |
+| 34 | Mohan    | Mishra     | Connaught Place   | Delhi    | Marketing |  76000.00 |      1 | 9876543243 |   31 | 1993-04-18 |
+| 36 | Amit     | Saxena     | Rohini            | Delhi    | IT        |  82000.00 |      1 | 9876543245 |   28 | 1996-02-12 |
+| 37 | Rakesh   | Bhatt      | Amirpet           | Hydrabad | HR        |  60000.00 |      0 | 9876543246 |   30 | 1994-07-25 |
+| 38 | Anita    | Thakur     | Vasant Kunj       | Delhi    | Finance   |  87000.00 |      1 | 9876543247 |   33 | 1991-12-03 |
+| 39 | Arjun    | Rana       | Janakpuri         | Delhi    | Marketing |  77000.00 |      1 | 9876543248 |   29 | 1995-05-14 |
+| 40 | Nisha    | Yadav      | Sarita Vihar      | Delhi    | Sales     |  62000.00 |      1 | 9876543249 |   26 | 1998-08-17 |
+| 41 | Shivani  | Shetty     | Andheri West      | Mumbai   | IT        |  95000.00 |      1 | 9876543250 |   30 | 1994-06-25 |
+| 42 | Karan    | Kohli      | Amirpet           | Hydrabad | HR        |  69500.00 |      0 | 9876543251 |   29 | 1995-11-10 |
+| 43 | Varun    | Mehta      | Goregaon          | Mumbai   | Finance   |  98000.00 |      1 | 9876543252 |   34 | 1990-04-19 |
+| 44 | Nidhi    | Kapadia    | Juhu              | Mumbai   | Marketing |  83000.00 |      1 | 9876543253 |   28 | 1996-03-29 |
+| 45 | Sandeep  | Naik       | Kurla             | Mumbai   | Sales     |  73000.00 |      1 | 9876543254 |   35 | 1989-07-15 |
+| 46 | Rupa     | Malhotra   | Mulund            | Mumbai   | IT        |  92000.00 |      1 | 9876543255 |   31 | 1993-01-21 |
+| 47 | Sameer   | Deshmukh   | Amirpet           | Hydrabad | HR        |  67000.00 |      0 | 9876543256 |   33 | 1991-06-14 |
+| 48 | Deepak   | Sawant     | Thane             | Mumbai   | Finance   | 143495.00 |      1 | 9876543257 |   36 | 1988-09-01 |
+| 49 | Aarti    | Menon      | Worli             | Mumbai   | Marketing |  86000.00 |      1 | 9876543258 |   29 | 1995-05-19 |
+| 50 | Ashok    | Patel      | Vashi             | Mumbai   | Sales     |  72000.00 |      1 | 9876543259 |   28 | 1996-08-12 |
+| 51 | Gaurav   | Singh      | Kankarbagh        | Bihar    | IT        |  75000.00 |      1 | 9876543260 |   28 | 1996-09-04 |
+| 52 | Priyanka | Jha        | somewhere in agra | Agra     | HR        |  60500.00 |      0 | 9876543261 |   27 | 1997-02-16 |
+| 53 | Saurabh  | Kumar      | Patliputra        | Bihar    | Finance   |  82000.00 |      1 | 9876543262 |   30 | 1994-01-07 |
+| 55 | Naveen   | Pandey     | Fraser Road       | Bihar    | Sales     |  70400.00 |      1 | 9876543264 |   33 | 1991-04-15 |
+| 56 | Aryan    | Singh      | Gandhi Maidan     | Bihar    | IT        |  78000.00 |      1 | 9876543265 |   29 | 1995-11-26 |
+| 57 | Komal    | Sharma     | somewhere in agra | Agra     | HR        |  65000.00 |      0 | 9876543266 |   32 | 1992-10-12 |
+| 58 | Santosh  | Sinha      | Dak Bungalow      | Bihar    | Finance   |  86000.00 |      1 | 9876543267 |   34 | 1990-03-06 |
+| 60 | Rajesh   | Thakur     | Exhibition Road   | Bihar    | Sales     |  62000.00 |      1 | 9876543269 |   27 | 1997-05-17 |
++----+----------+------------+-------------------+----------+-----------+-----------+--------+------------+------+------------+
+57 rows in set (0.00 sec)
+
+mysql> show grants from 'iuser'@'localhost';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from 'iuser'@'localhost'' at line 1
+mysql> show grant from 'iuser'@'localhost';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'grant from 'iuser'@'localhost'' at line 1
+mysql> show grant from 'root'@'localhost';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'grant from 'root'@'localhost'' at line 1
+mysql> show grant from 'myuser'@'localhost';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'grant from 'myuser'@'localhost'' at line 1
+mysql>
