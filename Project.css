@@ -223,6 +223,11 @@ box-sizing: border-box;
     align-items: center;
     justify-content: center
 }
+.sec20{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 
 }
@@ -301,4 +306,80 @@ box-sizing: border-box;
 }
 .sec20a3{
     margin: 20px;
+}
+.sec20a4{
+    background-color: aqua;
+    color: white;
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+.sec20a4:hover{
+    background-color: navy;
+    color: rgb(10, 10, 10);
+    padding: 30px;
+    border-radius: 30px;
+    border: none;
+    animation-name: disco;
+    animation-duration: 5s;
+    animation-iteration-count: infinite ;
+}
+@keyframes disco{
+    0%{
+        box-shadow: 2px 4px 3px 6px red;
+        background-color: yellow;
+    }
+    50%{
+        box-shadow: 2px 4px 3px 6px red;
+        background-color: yellow;
+    }
+    100%{
+        box-shadow: 2px 4px 3px 6px red;
+        background-color: yellow;
+    }
+}
+.sec21{
+    
+    display: flex;
+    justify-content: space-around;
+    font-family: "Roboto", serif;
+
+}
+.sec22a1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+}
+.sec22a2{
+    font-size: 20px;
+}
+.sec22a3{
+    background-color: rgb(110, 13, 42);
+    color: black;
+    padding: 20px;
+}
+.sec22a3:hover{
+    background-color: navy;
+    color: rgb(10, 10, 10);
+    padding: 30px;
+    border-radius: 30px;
+    border: none;
+    animation-name: demo;
+    animation-duration: 5s;
+    animation-iteration-count: infinite ;
+}
+@keyframes demo{
+    0%{
+        box-shadow: 2px 4px 3px 6px red;
+        background-color: yellow;
+    }
+    50%{
+        box-shadow: 2px 4px 3px 6px red;
+        background-color: yellow;
+    }
+    100%{
+        box-shadow: 2px 4px 3px 6px red;
+        background-color: yellow;
+    }
 }
