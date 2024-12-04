@@ -71,6 +71,7 @@ box-sizing: border-box;
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(2,auto);
     font-family: "Montserrat", sans-serif;
+    margin-left: 25px;
 }
 .sec5ul{
     list-style: none;
@@ -498,9 +499,7 @@ position: absolute;
     background-color: green;
 }
 @media (max-width: 600px) {
-    .sec22{
-        
-    }
+    
     .sec22a1{
         width: 100%;
         padding: 5px;
